@@ -4,7 +4,6 @@ import com.vagdedes.spartan.Register;
 import com.vagdedes.spartan.files.ConfigManagement;
 import com.vagdedes.spartan.math.NumberConversions;
 import com.vagdedes.spartan.support.Permissions;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -21,12 +20,12 @@ public class Detection {
             Register.plugin.getDataFolder() + "/detections.yml"
     );
 
-    private static final List<String> defaultPunishments = new ArrayList<>(Detection.maxCommands);
+    private static final List<String> defaultPunishments = new ArrayList<>(maxCommands);
 
     static {
         defaultPunishments.add(Register.getCommand() + " kick {player} {detection:name}");
 
-        for (int position = (defaultPunishments.size() + 1); position <= Detection.maxCommands; position++) {
+        for (int position = (defaultPunishments.size() + 1); position <= maxCommands; position++) {
             defaultPunishments.add("");
         }
     }
